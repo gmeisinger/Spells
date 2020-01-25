@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/PlayerCharacter.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Player/States/player_moving.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Camera/GameCamera.tscn" type="PackedScene" id=4]
+
+[node name="PlayerCharacter" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+shirtColor = Color( 0.227451, 0.266667, 0.4, 1 )
+pantsColor = Color( 0, 0, 0, 1 )
+
+[node name="moving" type="Node" parent="stateMachine" index="0"]
+script = ExtResource( 3 )
+is_starting_state = true
+
+[node name="GameCamera" parent="." index="9" instance=ExtResource( 4 )]
+
+[editable path="hands"]
